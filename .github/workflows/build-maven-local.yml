@@ -33,3 +33,10 @@ jobs:
 
       - name: Publish SDK to Maven Local
         run: ./gradlew :sdk:publishReleasePublicationToMavenLocal
+
+      - name: Upload SDK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sdk-m2
+          path: ~/.m2/repository/com/tan/lib/sdk/
+
